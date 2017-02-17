@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ProPonte DB Master</title>
+
+    <!-- JQuery -->
+    <script src="./js/jquery.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+    <script src="./bootstrap/js/bootstrap.js"></script>
+
+    <!-- Chiamate AJAX -->
+    <script src="./js/ajax.js"></script>
+
+    <!-- Carica la navbar e la pagina soci.html quando la pagina è pronta -->
+    <script>
+      $(document).ready(function(){
+        $("#navbar").load("navbar.html");
+        $('#body').load("soci.html");
+        countM();
+        countF();
+      });
+    </script>
+
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+    <!--<script>$("#navbar").load("navbar.html");</script>-->
+
+    <!-- Corpo -->
+    <div class="container-fluid" id="body"></div>
+  </body>
+</html>
