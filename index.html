@@ -40,10 +40,16 @@
         <div class="col-md-6 col-md-offset-1">
           <h1 style="display: inline;">Tabella Soci</h1>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">
+          <select class="form-control" ng-model="filtro">
+            <option>nome</option>
+            <option>cognome</option>
+          </select>
+        </div>
+        <div class="col-md-2">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Cerca" ng-model="cerca">
-            <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
           </div>
         </div>
       </div>
@@ -55,7 +61,7 @@
               <th>Nome</th>
               <th>Cognome</th>
             </tr>
-            <tr ng-repeat="x in names | filter: cerca">
+            <tr ng-repeat="x in names | orderBy: filtro | filter: cerca">
               <td ng-if="$odd">{{ x.id }}</td>
               <td ng-if="$even" class="active">{{ x.id }}</td>
 
